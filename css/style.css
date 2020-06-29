@@ -1,0 +1,99 @@
+/*VARIABLES*/
+:root {
+    --element-background: #333333;
+    --highlight: #E74C3C;
+    --site-background: #ECF0F1;
+    --divider: #C5C9C9;
+    --hover: #374140;}
+/*BASE STYLES*/
+h1,h2,h3,h4 {color: #1E1E20;}
+p {
+    line-height: 1.3em;
+    letter-spacing: 1px;}
+a {
+    text-decoration: none;
+    color: #1E1E20;
+    transition: .2s ease;}
+a:hover { color: var(--hover);}
+._site_ {
+    background-color: var(--site-background);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 75vh 1fr 60px;}
+._masthead_ {
+    grid-column: 1/4;
+    background-color: var(--element-background);
+    box-shadow: 0px 0px 10px #333;
+    display: flex;
+    height: 60px;
+    width: 100%;
+    position: fixed;}
+._masthead_ h2 {
+    align-self: center;
+    color: white;
+    margin-left: 30px;}
+._banner_ {
+    background: url('../images/banner.jpg');
+    background-size: cover;
+    display: flex;
+    height: 800px;
+    position: fixed;
+    width: 100%;
+    z-index: -1;}
+.-greeting {
+    align-self: center;
+    margin: 0 auto;
+    margin-top: -60px;
+    text-align: center;}
+._main-wrapper_ {
+    grid-column: 1/4;
+    grid-row: 3/4;
+    box-shadow: 0px 2px 10px #333;
+    background-color: var(--site-background);
+    margin: 0 auto;
+    width: 100%;}
+._main_ {
+    margin: 0 auto;
+    max-width: 1080px;
+    display: grid;
+    grid-template-columns: .6fr 1fr 1fr;
+    grid-template-rows: 1fr;}
+.section1 {
+    grid-row: 1/2;
+    padding: 30px;}
+._main_ img {
+    max-width: 100%;
+    padding-bottom: 40px;}
+._aside_ {
+    border-right: solid 1px var(--divider);
+    padding: 30px;}
+.divider {border-bottom: solid 1px var(--divider);}
+._footer_ {
+    grid-column: 1/4;
+    grid-row: 4/5;
+    background-color: var(--element-background);
+    box-shadow: 0px -2px 10px #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;}
+._footer_ p {align-self: center;}
+._footer_ a {color: white;}
+._footer_ a:hover {color: var(--hover);}
+/*SCREEN SPECIFIC STYLING*/
+@media only screen and (min-width:750px) {
+    .-greeting {padding: 0px 60px 30px 60px;}
+    .-greeting h1 {font-size: 5em;}
+    .section1 {grid-column: 2/4;}
+    ._aside_ {
+        grid-column: 1/2;
+        grid-row: 1/2;    }
+}
+@media only screen and (max-width:749px) {
+    .-greeting {padding: 0px;}
+    .-greeting h1 {font-size: 3.5em;}
+    .-greeting h3 {font-size: .8em;}
+    .section1 {grid-column: 1/4;}
+    ._aside_ {grid-column: 1/4; grid-row: 2/3;}
+}
